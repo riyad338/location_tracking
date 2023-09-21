@@ -219,7 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Text(
-                      "o",
+                      "OR",
                       style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
                     Expanded(

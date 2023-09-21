@@ -4,7 +4,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tracking_system/dropdown/depend_dropdown.dart';
+import 'package:tracking_system/dropdown/provider.dart';
 import 'package:tracking_system/pages/another_location_get.dart';
+import 'package:tracking_system/pages/countdown.dart';
 import 'package:tracking_system/pages/google_map_page.dart';
 import 'package:tracking_system/pages/login_page.dart';
 import 'package:tracking_system/pages/launcher_page.dart';
@@ -18,6 +21,7 @@ void main() async {
 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => UserProvider()),
+    ChangeNotifierProvider(create: (context) => DropDownProvider()),
   ], child: const MyApp()));
 }
 
@@ -45,6 +49,8 @@ class MyApp extends StatelessWidget {
               GoogleMapPage.routeName: (context) => GoogleMapPage(),
               PhoneAuthPage.routeName: (context) => PhoneAuthPage(),
               TrackingPage.routeName: (context) => TrackingPage(),
+              DropDownPage.routeName: (context) => DropDownPage(),
+              CountDown.routeName: (context) => CountDown(),
             },
           );
         });

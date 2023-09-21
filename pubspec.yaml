@@ -48,6 +48,8 @@ dependencies:
   firebase_storage:
   otp_text_field:
   background_location:
+  intl:
+
 
 
 dependency_overrides:

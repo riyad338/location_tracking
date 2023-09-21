@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tracking_system/auth/auth_service.dart';
+import 'package:tracking_system/dropdown/depend_dropdown.dart';
 import 'package:tracking_system/pages/login_page.dart';
 
 class GoogleMapPage extends StatefulWidget {
@@ -72,6 +73,16 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
       appBar: AppBar(
         title: Text("See all tracking location"),
         actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, DropDownPage.routeName);
+              },
+              icon: Icon(Icons.arrow_forward)),
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, DropDownPage.routeName);
+              },
+              icon: Icon(Icons.arrow_forward)),
           IconButton(
             onPressed: () async {
               await AuthService.logout().then((_) =>

@@ -6,6 +6,9 @@ class DBHelper {
   static const _collectionLocation = 'Location';
   static const _collectionUser = 'Users';
   static const _collectiontypeAndImage = 'Type&Image';
+  static const _collectionDivision = 'Division';
+  static const _collectionDistrict = 'District';
+  static const _collectionThana = 'Thana';
 
   static final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -47,4 +50,17 @@ class DBHelper {
         await _db.collection(_collectionUser).doc(userId).get();
     return userSnapshot.exists;
   }
+
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getDivision() =>
+      _db.collection(_collectionDivision).snapshots();
+
+  static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllDistrict(
+          String pId) =>
+      _db
+          .collection(_collectionDistrict)
+          .where('pId', isEqualTo: pId)
+          .snapshots();
+  static Stream<QuerySnapshot<Map<String, dynamic>>> fetchAllThana(
+          String pId) =>
+      _db.collection(_collectionThana).where('pId', isEqualTo: pId).snapshots();
 }
